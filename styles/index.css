@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box !important;    /* el tamaño de las cajas contempla el padding */
+}
+
+/*--------------------------------------------------------------------------CARGA DE TIPOGRAFÍAS */
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto/Roboto-Regular.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto/Roboto-Italic.ttf") format("ttf");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto/Roboto-Bold.ttf") format("ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto/Roboto-Thin.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+
+/*--------------------------------------------------------------------------TEXTO */
+html, body {
+  margin: 0px;
+
+  font-size: 0.1vh;
+  font-family: "Roboto", sans-serif;
+  text-align: justify;
+}
+h1, h2, h3, h4, h5, h6, .navButton {
+  font-family: 'Fredoka One', cursive;
+}
+h1 {
+  font-size: 56rem;
+  font-weight: bold;
+}
+h2 {
+  font-size: 36rem;
+  font-weight: bold;
+}
+h3 {
+  font-size: 28rem;
+  font-weight: bold;
+}
+h4 {
+  font-size: 24rem;
+}
+p, .navButton {
+  font-size: 20rem;
+}
+h5 {
+  font-size: 12rem;
+  font-weight: 200;
+}
+
+
+/*--------------------------------------------------------------------------IMÁGENES */
+.imagen{
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+}
+iframe {
+  width: 100%;
+  height: auto;
+}
+
+
+/*--------------------------------------------------------------------------NAVEGACIÓN */
+#sidebar {
+  height: 100vh;
+  position: fixed;
+}
+#sidebar div {  
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+#sidebar img {
+  margin: 32px;
+  width: 70%;
+  height: auto;
+}
+
+#navbar, #sidebar {
+  background-color: aquamarine;
+}
+#navbar {
+  border-radius: 16px;
+}
+
+.navButton {
+  margin: 8px;
+  padding: 12px;
+
+  color:black;
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+}
+.navButton:hover {
+  color:white;
+  background-color: cornflowerblue;
+  border: none;
+  border-radius: 16px;
+  font-weight: bold;
+}
+
+
+/*--------------------------------------------------------------------------SEPARADOR */
+.separador {
+  width: 100%;
+  height: 2px;
+
+  margin-bottom: 5vh;
+
+  background-color: aquamarine;
+}
+
+#sobreElJuego h2, #sobreElJuego h3, .version, .separador, nav {
+  margin-top: 80rem;
+}
+
+
+/*--------------------------------------------------------------------------CONTENIDO */
+#pagina {
+  margin: 0px;
+  padding: 0%;
+}
+#contenido {
+  padding: 2.5% 10% 0px;
+}
+
+#portada {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+footer {
+  margin-bottom: 40rem;
+}
