@@ -1,0 +1,17 @@
+/*--------------------------------------------------------------------------CANVAS p5 */
+#canvas {
+  width: 100%;
+  height: auto;
+  margin-top: 80rem;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  
+  position: relative;
+}
+canvas {
+  display: block;
+  position: relative;
+}
