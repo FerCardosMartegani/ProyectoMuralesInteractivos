@@ -239,7 +239,7 @@ class Fish {
         push();
           if(this.tipo == VENENOSO){ fill(100,75,50,75); }
           else{ fill(100,100,100,75); }
-          ellipse(this.posX,this.posY, this.tamX,this.tamY);
+          ellipse(this.posX,this.posY, this.tamX,this.tamY);          
         pop();
       }
     }

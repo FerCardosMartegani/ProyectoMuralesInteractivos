@@ -1,6 +1,4 @@
 //--------------------------------------------------------------------------------------------------------DECLARACIÓN
-let funcionaElQR;
-
 //--------------------------------------------------------------------------------------CONTROL
 let pantalla, puntos,record, tiempo,segundos,minutos, debug, pausa;
 const puntosParaGanar = 10;     //puntos necesarios para ganar
@@ -53,18 +51,18 @@ const PAUSA = 2;
 
 //--------------------------------------------------------------------------------------------------------PRELOAD
 function preload(){
-  imgFondo = loadImage("../assets/img/underwater.png");
-  logoJuego = loadImage("../assets/img/Title.png");
-  logoScratch = loadImage("../assets/img/logo-scratch.png");
+  imgFondo = loadImage("./assets/img/underwater.png");
+  logoJuego = loadImage("./assets/img/Title.png");
+  logoScratch = loadImage("./assets/img/logo-scratch.png");
 
   for(let i=0; i<imgShark.length; i++){
     imgShark[i] = new Array(2);
     for(let j=0; j<imgShark[i].length; j++){
-      imgShark[i][j] = loadImage("../assets/img/shark-"+i+","+j+".png");
+      imgShark[i][j] = loadImage("./assets/img/shark-"+i+","+j+".png");
     }
   }
   for(let i=0; i<2; i++){
-    imgFish[i] = loadImage("../assets/img/fish-"+i+".png");
+    imgFish[i] = loadImage("./assets/img/fish-"+i+".png");
   }
 }
 
@@ -110,11 +108,6 @@ function setup() {
 function draw() {
   background(0);
   image(imgFondo, width/2,height/2, width,nuevoAlto(imgFondo,width));
-
-  if(funcionaElQR === true){
-    fill(0,100,100,75);
-    rect(width/2,height/2, width/2,height/2);
-  }
 
   //--------------------------------------------------------------------------------------MENÚ PRINCIPAL
   if(pantalla == MENU){
@@ -199,7 +192,6 @@ function draw() {
     carteles[PUNTAJE].dibujar();
     carteles[RELOJ].dibujar();
     mostrarBotones();
-    reset();
   }
   //--------------------------------------------------------------------------------------PERDER
   else if(pantalla == PERDER){
@@ -207,7 +199,6 @@ function draw() {
     carteles[PUNTAJE].dibujar();
     carteles[RELOJ].dibujar();
     mostrarBotones();
-    reset();
   }
   //--------------------------------------------------------------------------------------CONTROLES
   else if(pantalla == CONTROLES){

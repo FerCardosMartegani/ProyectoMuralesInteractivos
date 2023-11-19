@@ -15,8 +15,8 @@
     <!-- estilo -->
     <link rel="stylesheet" type="text/css" href="styles/index.css">
     <link rel="stylesheet" type="text/css" href="styles/jugable.css">
-    <link rel="icon" href="../assets/img/fish-0.png" />
-    <title>Shark's Dinner jugable</title>
+    <link rel="icon" href="./assets/img/fish-0.png" />
+    <title>Shark's Dinner escaner</title>
   </head>
 
   <body>
@@ -89,8 +89,10 @@
       </div>
     </div>
     
-
-    <!-- -------------------------------------------------------------------------------------LIBRERÍA ESCANER -->
+    
+    <!-- p5 -->
+    <script src="js/jugable.js"></script>
+    <!-- LIBRERÍA ESCANER -->
     <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
     <script>
       let textoDecodificado;
@@ -114,9 +116,6 @@
         /* verbose= */ false);
       html5QrcodeScanner.render(onScanSuccess, onScanFailure);
     </script>
-
-    <!-- p5 -->
-    <script src="js/jugable.js"></script>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>

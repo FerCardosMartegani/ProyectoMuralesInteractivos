@@ -35,6 +35,7 @@ class Carteles {
       rect(this.posX,this.posY, this.tamX*margen,this.tamY*margen, this.tamY*margen);
 
       if(this.clicked){
+        if((pantalla != JUEGO) && (this.link == JUEGO)){ reset(); }
         pantalla = this.link;
         this.burbujas = new Burbujas(this.posX,this.posY+this.tamY/3, this.tamY*2, 10, false);
       }

@@ -15,11 +15,11 @@ window.onload = function mostrarBotones(){
     <button onClick="window.location.href='generador.html';" class="navButton btn btn-lg" type="button">
       <span class="glyphicon glyphicon-qrcode"></span> Generador
     </button>
-    <button class="navButton btn btn-lg" type="button" disabled="disabled">
-      <span class="glyphicon glyphicon-alert"></span> Próximamente
+    <button onClick="window.location.href='lector.php';" class="navButton btn btn-lg" type="button">
+      <span class="glyphicon glyphicon-th-list"></span> Registro
     </button>
-    <button class="navButton btn btn-lg" type="button" disabled="disabled">
-      <span class="glyphicon glyphicon-alert"></span> Próximamente
+    <button onClick="window.location.href='jugable.php';" class="navButton btn btn-lg" type="button">
+      <span class="glyphicon glyphicon-book"></span> Guardar
     </button>
     <button class="navButton btn btn-lg" type="button" disabled="disabled">
       <span class="glyphicon glyphicon-alert"></span> Próximamente
