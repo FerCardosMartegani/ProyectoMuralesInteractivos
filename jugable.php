@@ -67,38 +67,9 @@
           </div>
           <div id="canvas"> <!-- canvas --> </div>
 
-          <!-- <form action="<?php //echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
-          <form method="post" action="<?php //echo $_SERVER['PHP_SELF']; ?>">
-            <input name="fname" value="" id="name-field" />
-            <button onClick="sendData();return false">Send Data</button>
-          </form>
-           -->
-
-          <!-- <form method="post" action="<?php //echo $_SERVER['PHP_SELF']; ?>">
-            <input type="text" name="fname" id="fname">
-            <input type="submit" onClick="sendData();return false">
-          </form> -->
-
-          <?php
-          // if (isset($_POST["name"])) {
-          //   echo "<h1>{$_POST["name"]}</h1>";
-          // }
-          
-          // require 'php/conector.php'; //Llamar al php que accede a la tabla
-          
-          // if ($_SERVER["REQUEST_METHOD"] == "POST") {
-          //   $name = $_POST['fname'];
-          //   if (empty($name)) {
-          //     echo "<h1> Name is empty </h1>";
-          //   } else {
-          //     echo "<h1>" . $name . "</h1>";
-          //   }
-          // }
-          ?>
-
           <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" id="falseForm">
-            <input type="text" name="fname" id="fname">
-            <input type="submit">
+            <input type="text" name="fname" id="fname" class="hide">
+            <button type="submit" class="btn btn-success btn-lg center-block">Guardar datos</button>
           </form>
 
           <?php

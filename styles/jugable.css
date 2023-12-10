@@ -8,10 +8,14 @@
   flex-direction: row;
   justify-content: start;
   align-items: start;
-  
+
   position: relative;
 }
 canvas {
   display: block;
   position: relative;
+}
+
+#falseForm {
+  margin: 2%;
 }

@@ -1,5 +1,5 @@
 * {
-  box-sizing: border-box !important;    /* el tamaño de las cajas contempla el padding */
+  box-sizing: border-box !important; /* el tamaño de las cajas contempla el padding */
 }
 
 /*--------------------------------------------------------------------------CARGA DE TIPOGRAFÍAS */
@@ -28,17 +28,23 @@
   font-style: normal;
 }
 
-
 /*--------------------------------------------------------------------------TEXTO */
-html, body {
+html,
+body {
   margin: 0px;
 
   font-size: 0.1vh;
   font-family: "Roboto", sans-serif;
   text-align: justify;
 }
-h1, h2, h3, h4, h5, h6, .navButton {
-  font-family: 'Fredoka One', cursive;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navButton {
+  font-family: "Fredoka One", cursive;
 }
 h1 {
   font-size: 56rem;
@@ -55,7 +61,9 @@ h3 {
 h4 {
   font-size: 24rem;
 }
-p, .navButton, a {
+p,
+.navButton,
+a {
   font-size: 20rem;
 }
 h5 {
@@ -63,9 +71,8 @@ h5 {
   font-weight: 200;
 }
 
-
 /*--------------------------------------------------------------------------IMÁGENES */
-.imagen{
+.imagen {
   display: flex;
   flex-direction: column;
   justify-content: end;
@@ -76,13 +83,12 @@ iframe {
   height: auto;
 }
 
-
 /*--------------------------------------------------------------------------NAVEGACIÓN */
 #sidebar {
   height: 100vh;
   position: fixed;
 }
-#sidebar div {  
+#sidebar div {
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -94,7 +100,8 @@ iframe {
   height: auto;
 }
 
-#navbar, #sidebar {
+#navbar,
+#sidebar {
   background-color: aquamarine;
 }
 #navbar {
@@ -105,19 +112,18 @@ iframe {
   margin: 8px;
   padding: 12px;
 
-  color:black;
+  color: black;
   background-color: transparent;
   border: none;
   font-weight: bold;
 }
 .navButton:hover {
-  color:white;
+  color: white;
   background-color: cornflowerblue;
   border: none;
   border-radius: 16px;
   font-weight: bold;
 }
-
 
 /*--------------------------------------------------------------------------SEPARADOR */
 .separador {
@@ -129,10 +135,13 @@ iframe {
   background-color: aquamarine;
 }
 
-#sobreElJuego h2, #sobreElJuego h3, .version, .separador, nav {
+#sobreElJuego h2,
+#sobreElJuego h3,
+.version,
+.separador,
+nav {
   margin-top: 80rem;
 }
-
 
 /*--------------------------------------------------------------------------CONTENIDO */
 #pagina {
