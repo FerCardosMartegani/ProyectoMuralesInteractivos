@@ -10,9 +10,6 @@ $test = $_ENV['TEST'];
 echo "<script> console.log('Leyendo .env: $test') </script>";
 
 //----------------------------------------------------------------------CONECTAR CON DATABASE
-// $server = "localhost";
-// $user = "root";
-// $pass = "";
 $server = $_ENV['DB_SERVER'];
 $user = $_ENV['DB_USER'];
 $pass = $_ENV['DB_PASS'];
