@@ -20,7 +20,7 @@ p {
 
 #pagina {
   /* height: 100%; */
-  margin: 32px 10vw 20vh;
+  margin: 32px 10vw;
 
   display: flex;
   flex-direction: column;
