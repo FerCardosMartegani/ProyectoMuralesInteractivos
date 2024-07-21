@@ -39,7 +39,14 @@ function setup() {
 
   // Load existing notes
   existingNotes.forEach((note) => {
-    messages.push(new Message(note.mensaje, note.posX, note.posY, note.color));
+    messages.push(
+      new Message(
+        note.mensaje,
+        note.posX * width,
+        note.posY * height,
+        note.color
+      )
+    );
   });
 
   // let initialColor = color("#FFB6C1");
@@ -66,12 +73,32 @@ function draw() {
   }
 
   if (draggingNote) {
+    document.getElementById("pagina").style.position = "fixed";
+    document.getElementById("pagina").style.margin = "32px 0px";
+    // document.getElementsByTagName("body")[0].classList.add("noScroll");
+    // document.getElementsByTagName("body")[0].style.position = "fixed";
+    // disableScroll();
+
     draggingNote.updatePosition(
-      mouseX - draggingNote.offsetX,
-      mouseY - draggingNote.offsetY
+      constrain(
+        mouseX - draggingNote.offsetX,
+        draggingNote.width / 5,
+        width - (draggingNote.width * 6) / 5
+      ),
+      constrain(
+        mouseY - draggingNote.offsetY,
+        draggingNote.height / 5,
+        height - (draggingNote.height * 6) / 5
+      )
     );
+  } else {
+    document.getElementById("pagina").style.position = "relative";
   }
 }
+
+function disableScroll() {}
+
+function enableScroll() {}
 
 function createInterface() {
   leaveNoteButton = document.getElementById("botonDejarNota");
@@ -198,7 +225,7 @@ function adjustInterfacePositions() {
   tamanoYcanva = map(tamanoXCanva, 900, 370, 600, 750);
   tamanoYcanva = constrain(
     tamanoYcanva,
-    (windowHeight * 2) / 5,
+    (windowHeight * 3) / 5,
     (windowHeight * 4) / 5
   );
 
@@ -257,8 +284,8 @@ function addMessage() {
   // leaveNoteButton.hide();
 
   document.getElementById("falseInputNotita").value = inputText;
-  document.getElementById("falseInputPosX").value = x;
-  document.getElementById("falseInputPosY").value = y;
+  document.getElementById("falseInputPosX").value = x / width;
+  document.getElementById("falseInputPosY").value = y / height;
   document.getElementById("falseInputColor").value = color;
 
   $.ajax({
@@ -302,8 +329,8 @@ function mouseReleased() {
       url: "actualizarNota.php",
       data: {
         mensaje: draggingNote.text,
-        posX: draggingNote.x,
-        posY: draggingNote.y,
+        posX: draggingNote.x / width,
+        posY: draggingNote.y / height,
         color: draggingNote.color,
       },
       success: function (response) {
@@ -316,6 +343,8 @@ function mouseReleased() {
 }
 
 function mouseClicked() {
+  console.log(messages[0].x);
+
   if (!isDragging) {
     // Solo ejecuta si no se está arrastrando
     if (enlargedNote && enlargedNote.isMouseInside()) {
@@ -331,45 +360,42 @@ function mouseClicked() {
   }
 }
 
-function mouseDragged() {
-  if (!isDragging && messages.length >= 2) {
-    let mouseMovedX;
-    let mouseMovedY;
-    let notePosesX = [];
-    let notePosesY = [];
+// function mouseDragged() {
+//   if (!isDragging && messages.length >= 2) {
+//     let mouseMovedX;
+//     let mouseMovedY;
+//     let notePosesX = [];
+//     let notePosesY = [];
 
-    mouseMovedX = mouseX - pmouseX;
-    mouseMovedY = mouseY - pmouseY;
+//     mouseMovedX = mouseX - pmouseX;
+//     mouseMovedY = mouseY - pmouseY;
 
-    for (let message of messages) {
-      notePosesX.push(message.x);
-      notePosesY.push(message.y);
-    }
-    notePosesX.sort();
-    notePosesY.sort();
-    notePosesY.reverse();
+//     for (let message of messages) {
+//       notePosesX.push(message.x);
+//       notePosesY.push(message.y);
+//     }
+//     notePosesX.sort();
+//     notePosesY.sort();
+//     notePosesY.reverse();
 
-    console.log(notePosesY);
-    console.log(notePosesY[notePosesY.length - 1]);
-
-    let canGoLeft = notePosesX[0] > 50 && mouseX < pmouseX;
-    let canGoRight =
-      notePosesX[notePosesX.length - 1] + 100 < width - 50 && mouseX > pmouseX;
-    if (canGoLeft || canGoRight) {
-      for (let message of messages) {
-        message.x += mouseMovedX;
-      }
-    }
-    let canGoUp = notePosesY[0] > 50 && mouseY < pmouseY;
-    let canGoDown =
-      notePosesY[notePosesY.length - 1] + 100 < height - 50 && mouseY > pmouseY;
-    if (canGoUp || canGoDown) {
-      for (let message of messages) {
-        message.y += mouseMovedY;
-      }
-    }
-  }
-}
+//     let canGoLeft = notePosesX[0] > 50 && mouseX < pmouseX;
+//     let canGoRight =
+//       notePosesX[notePosesX.length - 1] + 100 < width - 50 && mouseX > pmouseX;
+//     if (canGoLeft || canGoRight) {
+//       for (let message of messages) {
+//         message.x += mouseMovedX;
+//       }
+//     }
+//     let canGoUp = notePosesY[0] > 50 && mouseY < pmouseY;
+//     let canGoDown =
+//       notePosesY[notePosesY.length - 1] + 100 < height - 50 && mouseY > pmouseY;
+//     if (canGoUp || canGoDown) {
+//       for (let message of messages) {
+//         message.y += mouseMovedY;
+//       }
+//     }
+//   }
+// }
 
 class Message {
   constructor(text, x, y, color) {
