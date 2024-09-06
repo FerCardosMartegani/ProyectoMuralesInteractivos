@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (!empty($mensaje)) {
         // Realizar la actualización en la base de datos
-        $sql = "UPDATE `notitas` SET `posX`=?, `posY`=?, `color`=? WHERE `mensaje`=?";
+        $sql = "UPDATE `murales_notitas` SET `posX`=?, `posY`=?, `color`=? WHERE `mensaje`=?";
         $stmt = $conector->prepare($sql);
         $stmt->bind_param("ddss", $posX, $posY, $color, $mensaje);
         $stmt->execute();

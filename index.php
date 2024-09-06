@@ -47,7 +47,7 @@ error_reporting(E_ALL);
       require './conector.php';
 
       //----------------------------------------------------------------------OBTENER LISTA DE MUROS
-      $sql = "SELECT `UUID` FROM `muros`";
+      $sql = "SELECT `UUID` FROM `murales_muros`";
       $result = mysqli_query($conector, $sql);
 
       if ($result->num_rows > 0) { // Si hay resultados, convertirlos a formato JSON

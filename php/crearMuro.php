@@ -67,7 +67,7 @@
           $nuevoLocal = "/php/notas.php?muro=" . $UUID;
           $nuevoGlobal = $dom . $nuevoLocal;
 
-          $sql = "INSERT INTO `muros`(`UUID`) VALUES ('$UUID')";
+          $sql = "INSERT INTO `murales_muros`(`UUID`) VALUES ('$UUID')";
           $stmt = $conector->prepare($sql);
           $stmt->execute();
           echo ("

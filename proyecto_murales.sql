@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-06-2024 a las 02:15:12
+-- Tiempo de generación: 06-09-2024 a las 22:29:53
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `muros`
+-- Estructura de tabla para la tabla `murales_muros`
 --
 
-CREATE TABLE `muros` (
+CREATE TABLE `murales_muros` (
   `id` int(11) NOT NULL,
   `UUID` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -35,10 +35,10 @@ CREATE TABLE `muros` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `notitas`
+-- Estructura de tabla para la tabla `murales_notitas`
 --
 
-CREATE TABLE `notitas` (
+CREATE TABLE `murales_notitas` (
   `id` int(11) NOT NULL,
   `muro` text NOT NULL,
   `mensaje` text NOT NULL,
@@ -52,15 +52,15 @@ CREATE TABLE `notitas` (
 --
 
 --
--- Indices de la tabla `muros`
+-- Indices de la tabla `murales_muros`
 --
-ALTER TABLE `muros`
+ALTER TABLE `murales_muros`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `notitas`
+-- Indices de la tabla `murales_notitas`
 --
-ALTER TABLE `notitas`
+ALTER TABLE `murales_notitas`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -68,15 +68,15 @@ ALTER TABLE `notitas`
 --
 
 --
--- AUTO_INCREMENT de la tabla `muros`
+-- AUTO_INCREMENT de la tabla `murales_muros`
 --
-ALTER TABLE `muros`
+ALTER TABLE `murales_muros`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `notitas`
+-- AUTO_INCREMENT de la tabla `murales_notitas`
 --
-ALTER TABLE `notitas`
+ALTER TABLE `murales_notitas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 

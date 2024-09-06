@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $color = $_POST['color'];
 
     if (!empty($mensaje) && !empty($muro)) {
-        $sql = "INSERT INTO `notitas`(`muro`, `mensaje`, `posX`, `posY`, `color`) VALUES (?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO `murales_notitas`(`muro`, `mensaje`, `posX`, `posY`, `color`) VALUES (?, ?, ?, ?, ?)";
         $stmt = $conector->prepare($sql);
         $stmt->bind_param("ssdds", $muro, $mensaje, $posX, $posY, $color);
         $stmt->execute();
