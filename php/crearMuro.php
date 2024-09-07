@@ -64,8 +64,8 @@
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['crearMuroInput'])) {
           $UUID = uniqid("notitas");
-          $nuevoLocal = "/php/notas.php?muro=" . $UUID;
-          $nuevoGlobal = $dom . $nuevoLocal;
+          $nuevoLocal = "/notas.php?muro=" . $UUID;
+          $nuevoGlobal = $dom . "/php" . $nuevoLocal;
 
           $sql = "INSERT INTO `murales_muros`(`UUID`) VALUES ('$UUID')";
           $stmt = $conector->prepare($sql);
@@ -80,7 +80,7 @@
               document.getElementById('botonGenerar').style.display = 'none';
               document.getElementById('qrFantasma').style.display = 'none';
               document.getElementById('boton2').innerHTML = `
-                <button id='dejarMensajeBtn' class='customButton' onclick=location.assign('$nuevoLocal')>
+                <button id='dejarMensajeBtn' class='customButton' onclick=location.assign('.'+'$nuevoLocal')>
                   <h3>¡Dejá un mensaje!</h3>
                 </button>
                 <button id='downloadBtn' class='customButton'>
