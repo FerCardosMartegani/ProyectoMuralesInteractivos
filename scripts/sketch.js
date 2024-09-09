@@ -143,7 +143,12 @@ function createInterface() {
   });
 
   input = createInput();
-  input.input(showPreview);
+  input.input(() => {
+    if (input.value().length > 20) {
+      input.value(input.value().substring(0, 20)); // Limita a 20 caracteres
+    }
+    showPreview();
+  });
 
   button = createButton("Enviar");
   button.mousePressed(addMessage);
