@@ -28,7 +28,7 @@ function preload() {
   customFont = loadFont("../assets/DarumadropOne-Regular.ttf");
   backgroundImage = loadImage("../assets/img/fondoCorcho.png");
   backgroundImage2 = loadImage("../assets/img/fondoCorchoLargo.png");
-  pinImage = loadImage("../assets/img/pinchito.png");
+  pinImage = loadImage("../assets/img/icon.png");
 }
 
 function setup() {

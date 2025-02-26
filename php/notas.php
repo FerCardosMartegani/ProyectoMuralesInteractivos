@@ -4,7 +4,7 @@ require '../conector.php';
 $muro = $_GET['muro'];
 
 // Fetch existing notes
-$sql = "SELECT * FROM `notitas` WHERE `muro` = ?";
+$sql = "SELECT * FROM `murales_notitas` WHERE `muro` = ?";
 $stmt = $conector->prepare($sql);
 $stmt->bind_param("s", $muro);
 $stmt->execute();
